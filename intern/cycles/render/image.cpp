@@ -148,7 +148,7 @@ ImageDataType ImageManager::get_image_metadata(const string& filename,
 		return IMAGE_DATA_TYPE_BYTE4;
 	}
 
-	ImageInput *in = ImageInput::create(filename);
+	std::unique_ptr<ImageInput> in = ImageInput::create(filename);
 
 	if(in) {
 		ImageSpec spec;
@@ -193,8 +193,6 @@ ImageDataType ImageManager::get_image_metadata(const string& filename,
 
 			in->close();
 		}
-
-		delete in;
 	}
 
 	if(is_half) {
@@ -465,7 +463,7 @@ bool ImageManager::file_load_image_generic(Image *img,
 		}
 
 		/* load image from file through OIIO */
-		*in = ImageInput::create(img->filename);
+		*in = ImageInput::create(img->filename).get();
 
 		if(!*in)
 			return false;

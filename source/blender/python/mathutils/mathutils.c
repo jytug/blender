@@ -110,7 +110,7 @@ Py_hash_t mathutils_array_hash(const float *array, size_t array_len)
 	x = 0x345678UL;
 	i = 0;
 	while (--len >= 0) {
-		y = _Py_HashDouble(NULL, (double)(array[i++]));
+		y = _Py_HashDouble((double)(array[i++]));
 		if (y == -1)
 			return -1;
 		x = (x ^ y) * mult;

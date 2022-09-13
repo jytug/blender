@@ -1,3 +1,4 @@
+cmake_policy(SET CMP0021 OLD)
 # ***** BEGIN LGPL LICENSE BLOCK *****
 #
 # Copyright 2009 Jrg Hermann Mller

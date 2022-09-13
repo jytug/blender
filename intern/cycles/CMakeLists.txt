@@ -1,3 +1,4 @@
+cmake_policy(SET CMP0021 OLD)
 # Standalone or with Blender
 if(NOT WITH_BLENDER AND WITH_CYCLES_STANDALONE)
 	set(CYCLES_INSTALL_PATH "")

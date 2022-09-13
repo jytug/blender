@@ -1,3 +1,4 @@
+cmake_policy(SET CMP0021 OLD)
 
 # GTest
 if(WITH_GTESTS)

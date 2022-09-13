@@ -45,9 +45,9 @@
 #endif
 
 #ifdef WIN32
-#  define SEP '\\'
+#  define SEPARATOR '\\'
 #else
-#  define SEP '/'
+#  define SEPARATOR '/'
 #endif
 
 #if defined(_MSC_VER)
@@ -60,8 +60,8 @@
 static int path_ensure_slash(char *string)
 {
 	int len = strlen(string);
-	if (len == 0 || string[len - 1] != SEP) {
-		string[len] = SEP;
+	if (len == 0 || string[len - 1] != SEPARATOR) {
+		string[len] = SEPARATOR;
 		string[len + 1] = '\0';
 		return len + 1;
 	}

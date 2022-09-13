@@ -1,3 +1,4 @@
+cmake_policy(SET CMP0021 OLD)
 
 set(LICENSES
 	Apache_2.0.txt

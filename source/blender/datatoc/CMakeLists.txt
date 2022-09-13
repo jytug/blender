@@ -1,3 +1,4 @@
+cmake_policy(SET CMP0021 OLD)
 # ***** BEGIN GPL LICENSE BLOCK *****
 #
 # This program is free software; you can redistribute it and/or

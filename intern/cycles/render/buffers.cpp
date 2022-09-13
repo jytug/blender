@@ -453,7 +453,7 @@ void DisplayBuffer::write(Device *device, const string& filename)
 	device->pixels_copy_from(rgba, 0, w, h);
 
 	/* write image */
-	ImageOutput *out = ImageOutput::create(filename);
+	std::unique_ptr<ImageOutput> out = ImageOutput::create(filename);
 	ImageSpec spec(w, h, 4, TypeDesc::UINT8);
 	int scanlinesize = w*4*sizeof(uchar);
 
@@ -467,8 +467,6 @@ void DisplayBuffer::write(Device *device, const string& filename)
 		AutoStride);
 
 	out->close();
-
-	delete out;
 }
 
 device_memory& DisplayBuffer::rgba_data()
